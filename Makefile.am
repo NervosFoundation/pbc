@@ -42,7 +42,7 @@ include/pbc_singular.h \
 include/pbc_test.h \
 include/pbc_utils.h
 
-libpbc_la_CPPFLAGS = -Iinclude
+libpbc_la_CPPFLAGS = -Iinclude $(PBC_CPPFLAGS)
 libpbc_la_SOURCES = arith/field.c arith/z.c \
 	arith/naivefp.c arith/fastfp.c \
 	arith/fp.c arith/fasterfp.c arith/montfp.c \
@@ -67,23 +67,23 @@ LDADD = libpbc.la -lgmp -lm
 noinst_PROGRAMS = pbc/pbc benchmark/benchmark benchmark/timersa benchmark/ellnet
 noinst_PROGRAMS += guru/fp_test guru/quadratic_test guru/poly_test guru/prodpairing_test
 noinst_PROGRAMS += guru/ternary_extension_field_test guru/eta_T_3_test
-pbc_pbc_CPPFLAGS = -I include
+pbc_pbc_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 pbc_pbc_SOURCES = pbc/parser.tab.c pbc/lex.yy.c pbc/pbc.c pbc/pbc_getline.c misc/darray.c misc/symtab.c
-benchmark_benchmark_CPPFLAGS = -I include
+benchmark_benchmark_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 benchmark_benchmark_SOURCES = benchmark/benchmark.c
-benchmark_timersa_CPPFLAGS = -I include
+benchmark_timersa_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 benchmark_timersa_SOURCES = benchmark/timersa.c
-benchmark_ellnet_CPPFLAGS = -I include
+benchmark_ellnet_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 benchmark_ellnet_SOURCES = benchmark/ellnet.c
-guru_fp_test_CPPFLAGS = -I include
+guru_fp_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_fp_test_SOURCES = guru/fp_test.c
-guru_quadratic_test_CPPFLAGS = -I include
+guru_quadratic_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_quadratic_test_SOURCES = guru/quadratic_test.c
-guru_poly_test_CPPFLAGS = -I include
+guru_poly_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_poly_test_SOURCES = $(libpbc_la_SOURCES) guru/poly_test.c
-guru_prodpairing_test_CPPFLAGS = -I include
+guru_prodpairing_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_prodpairing_test_SOURCES = guru/prodpairing_test.c
-guru_ternary_extension_field_test_CPPFLAGS = -I include
+guru_ternary_extension_field_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_ternary_extension_field_test_SOURCES = guru/ternary_extension_field_test.c
-guru_eta_T_3_test_CPPFLAGS = -I include
+guru_eta_T_3_test_CPPFLAGS = -I include $(PBC_CPPFLAGS)
 guru_eta_T_3_test_SOURCES = guru/eta_T_3_test.c

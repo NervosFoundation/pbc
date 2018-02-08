@@ -2,7 +2,7 @@ CLEANFILES = *~
 maintainer-clean-local:
 	-rm -rf Makefile.in
 
-AM_CPPFLAGS = -I../include
+AM_CPPFLAGS = -I../include $(PBC_CPPFLAGS)
 LDADD = ../libpbc.la -lgmp
 
 noinst_PROGRAMS = gena1param genaparam gendparam geneparam genfparam gengparam hilbertpoly listmnt listfreeman

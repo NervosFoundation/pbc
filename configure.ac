@@ -147,7 +147,7 @@ AC_ARG_ENABLE( debug,
                               [with_debug=n])
 
 CFLAGS="$CFLAGS -Wall -W -Wfloat-equal -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wredundant-decls \
--Wendif-labels -Wshadow -pipe -ffast-math -U__STRICT_ANSI__ -std=gnu99"
+-Wendif-labels -Wshadow -pipe -ffast-math -U__STRICT_ANSI__ -std=gnu99 -fPIC"
 if test "$with_debug" == "y"; then
     CFLAGS="$CFLAGS -g3 -O0"
 elif test "$with_enable_optimized" != "no"; then
